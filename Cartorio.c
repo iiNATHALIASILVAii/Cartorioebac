@@ -100,14 +100,25 @@ int deletar()
 	printf("Digite o CPF a ser deletado: ");
 	scanf("%s", cpf);
 	
-	remove(cpf); //Deleta o registro
-	
+	//Tenta abrir o arquivo para verificar se ele existe no banco	
 	FILE *file;
 	file = fopen(cpf, "r");
 	
+	//Verifica se o registro existe
 	if(file == NULL)
 	{
 		printf("O usuário não se encontra no sistema!. \n");
+		system("pause");
+		return;
+	}
+	
+	//Arquivo existe, podemos fechar e deletar
+	fclose(file);
+	
+	//Tenta remover o arquivo
+	if (remove(cpf) == 0)
+	{
+		printf("Registro deletado com sucesso!. \n");
 		system("pause");
 	}
 }
