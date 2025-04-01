@@ -60,8 +60,7 @@ int registrar() // Função responsavel por cadastrar os usuários
 	fprintf(file, cargo);
 	fclose(file);
 	
-	system("pause");
-		
+	system("pause");		
 }
 
 int consultar()
@@ -79,7 +78,7 @@ int consultar()
 	
 	if(file == NULL)//caso o cpf não seja localizado
 	{
-		printf("Não foi possivel abrir o arquivo, não localizado!\n");
+		printf("Não foi possivel abrir o arquivo, não localizado!. \n");
 	}
 	
 	while(fgets(conteudo, 200, file) != NULL)
@@ -89,8 +88,7 @@ int consultar()
 		printf("\n\n");
 	}
 	
-	system("pause");
-	
+	system("pause");	
 }
 
 int deletar()
@@ -112,7 +110,6 @@ int deletar()
 		printf("O usuário não se encontra no sistema!. \n");
 		system("pause");
 	}
-	
 }
 
 int main ()
@@ -130,7 +127,8 @@ int main ()
 		printf("Escolha a opção desejada do menu:\n\n");
 		printf("\t1 - Registrar nomes\n");//Barra invertida + t traz um espaço antes da frase
 		printf("\t2 - Consultar nomes\n");
-		printf("\t3 - Deletar nomes\n\n");
+		printf("\t3 - Deletar nomes\n");
+		printf("\t4 - Sair do sistema\n\n");
 		printf("Opção: ");
 	
 		scanf("%d", &opcao); //armazenar variavel inteira - decisão usuario
@@ -152,14 +150,17 @@ int main ()
 				deletar();
 			break;
 			
+			case 4:
+				printf("Obrigado por utilizar o sistema!\n");
+				return 0;
+				break;
+			
 			default:
 				printf("Essa opção não esta disponivel!\n");
 				system("pause");
 			break;			
 				
 		}//Fim da seleção
-    
 	}
-
 }
 
