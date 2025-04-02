@@ -136,7 +136,7 @@ int main ()
 	printf("Digite sua senha: \n\n");
 	scanf("%s",senhadigitada);
 	
-	comparacao = strcmp(senhadigitada, "adm"); //Critério de comparação das strings
+	comparacao = strcmp(senhadigitada, "admin"); //Critério de comparação das strings
 	
 	//Validação da senha
 	if(comparacao == 0)
