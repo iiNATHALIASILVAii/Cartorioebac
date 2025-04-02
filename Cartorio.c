@@ -128,14 +128,20 @@ int main ()
 	int opcao=0; //Definindo as variáveis
 	int laco=1;
 	char senhadigitada[10]="a";
+	int comparacao;
 	
 	setlocale(LC_ALL, "Portuguese"); //Definindo linguagem
 	printf("### Cartório de alunos da EBAC ###\n\n");
-	printf("Login de Administrador!\n\nDigite a sua senha: ");
+	printf("Login de Administrador!\n\n");
+	printf("Digite sua senha: \n\n");
 	scanf("%s",senhadigitada);
 	
-	if(strcmp(senhadigitada, "adm") == 0)
+	comparacao = strcmp(senhadigitada, "adm"); //Critério de comparação das strings
+	
+	//Validação da senha
+	if(comparacao == 0)
 	{
+		system ("cls");
 		for(laco=1;laco=1;)//Laço de repetição
 		{
 			system("cls"); //Limpa a tela
@@ -182,7 +188,7 @@ int main ()
 		}
 	}
 	else
-		printf("Senha incorreta!");
+		printf("Senha incorreta!\n");
 }
 
 
